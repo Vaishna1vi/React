@@ -1,24 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import Person from './components/Person';
 
 function App() {
+
+  // const decor = {
+  //   'color' : 'blue',
+  //   'backgroundColor' : 'pink',
+  // }
+  const person = {
+    'name' : 'vaishnavi',
+    'reg_no' : '22MCA10189',
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Person name={'akanksha'} reg_no={'22'}  city={'gwalior'} age={'21'} sirname={'Shrivastava'} />
+    <Person reg_no={'22MCA10189'} />
+    <Person  />
+    <Person /> */}
+
+    {/* <div style={{'color':'blue', 'fontStyle':'italic'}}> */}
+
+    {/* <div style={decor}> */}
+
+    <div className='demo'>
+
+{person.name}
+{" "}
+{person.reg_no}
+
+</div>
+</>
   );
 }
 
