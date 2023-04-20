@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import Item from './components/Item';
 import Num from './components/Num';
+import ItemForm from './components/ItemForm';
 const App = () => {
     const initialState = [
         {
@@ -27,17 +28,22 @@ const App = () => {
     ]
     const [data, setData] = useState(initialState)
 
-    const addItem = (name, id) => {
+    const addItem = (name) => {
         // alert("hi");
         const item = {
 
             'name': name,
-            'id': id,
+            'id': Math.random(),
 
         }
         setData([...data, item])
         // setData(addItem)
 
+    }
+
+    const removeItem = (id) => {
+        const values = data.filter((e)=>e.id !== id)
+        setData(values)
     }
 
     const [number, setNumber] = useState(
@@ -64,28 +70,34 @@ setNumber(element)
     return (
         <>
 
-            <div className='container text-center h1 my-2'>To Do List App</div>
+            <div className='container text-center h1 my-3'>To Do List App
             <br />
-            <div className="container text-center bg-primary py-4">
-                {/* {data.map(
-                (item) => <Item initialprops={item} />
-            )} */}
+            </div>
+            <ItemForm addItem={addItem} />
 
-                {number.map(
+            <br />
+
+            <div className="container text-center bg-primary py-4">
+                {data.map(
+                (item) => <Item initialprops={item} remove={removeItem} />
+            )}
+
+                {/* {number.map(
                     (pair) => <Num number={pair} vaishu={removeNumber} />
-                )}
+                )} */}
                 <br />
-                <div
+                {/* <div
                       onClick={()=>addItem("somit",6)}
                     //   onClick={addItem}
                     // onClick={addNumber}
                     // onClick={()=>removeNumber(1)}
                     className="btn btn-success"
 
-                >Submit</div>
+                >Submit</div> */}
 
             
             </div>
+            
         </>
     );
 }
