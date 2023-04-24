@@ -4,12 +4,16 @@ const ItemForm = ({addItem, addNumber}) => {
 
     // const [input, setInput] = useState(" ")
 
-    // const inputHandler = (e) => {
-    //     const store = target.value
-    // }
+    const inpHandler = (e) => {
+        const store = e.target.value
+        setInp(store)
+    }
 
     const [inp, setInp] = useState(" ")
 
+    // const inpChange = (e) => {
+    //     setInp(e.target.value)
+    // }
 //     const submitHandler = (e) => {
 //         e.preventDefault()
 //         addItem(input)
@@ -22,6 +26,8 @@ const submitHandler = (e) => {
   e.preventDefault()
   addNumber(inp)
 }
+
+
 
     return (
         <>
@@ -36,7 +42,8 @@ const submitHandler = (e) => {
                         value={inp}
 
                         // onChange={(e)=>setInput(e.target.value)}
-                        onChange={(e)=>setInp(e.target.value)}
+                        onChange={inpHandler}
+                        // onChange={(e)=>setInp(e.target.value)}
                         type="text" 
                         className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         

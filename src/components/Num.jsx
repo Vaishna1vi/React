@@ -1,6 +1,10 @@
 /* eslint-disable no-undef */
-const Num = ({number, vaishu}) => {
+const Num = ({number, vaishu, editNumber}) => {
   // const Num = ({addNumber}) => {
+
+  const editHandler = (e) => {
+    e.preventDefault()
+}
 
   return (
     <>
@@ -11,7 +15,7 @@ const Num = ({number, vaishu}) => {
     className="btn btn-danger mx-4">Delete</div>
     
     <div 
-    // onClick={()=> }
+    onClick={()=> editNumber}
     className="btn btn-success mx-4">Edit</div>
     </div>
     
