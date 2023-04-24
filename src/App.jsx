@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react';
@@ -57,9 +58,12 @@ const App = () => {
         ]
     );
 
-    const addNumber = () => {
+    const addNumber = (count) => {
         console.log("hi");
-        const add = { 'count': 0 }
+        const add = { 
+            'count': count, 
+        'id' : Math.random(),
+        }
         setNumber([...number, add])
     }
 
@@ -67,24 +71,29 @@ const removeNumber = (id) => {
 const element = number.filter((e)=>e.id !== id)
 setNumber(element)
 }
+
+const editNumber = () => {
+    
+}
     return (
         <>
 
             <div className='container text-center h1 my-3'>To Do List App
             <br />
             </div>
-            <ItemForm addItem={addItem} />
+            {/* <ItemForm addItem={addItem} /> */}
+            <ItemForm addNumber={addNumber} />
 
             <br />
 
             <div className="container text-center bg-primary py-4">
-                {data.map(
+                {/* {data.map(
                 (item) => <Item initialprops={item} remove={removeItem} />
-            )}
+            )} */}
 
-                {/* {number.map(
+                {number.map(
                     (pair) => <Num number={pair} vaishu={removeNumber} />
-                )} */}
+                )}
                 <br />
                 {/* <div
                       onClick={()=>addItem("somit",6)}
