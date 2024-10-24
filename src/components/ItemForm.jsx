@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ItemForm = ({addItem, addNumber}) => {
+const ItemForm = ({addItem, addNumber, editHandler}) => {
 
     // const [input, setInput] = useState(" ")
 
@@ -27,6 +27,14 @@ const submitHandler = (e) => {
   addNumber(inp)
 }
 
+const [change, setChange] = useState({inp});
+
+
+const editNumber = (e) => {
+    // const edit=e.target.value
+    setChange({...change, [e.target.name]: e.target.value})
+    // setInp([...inp, e.target.value])
+}
 
 
     return (
@@ -36,11 +44,11 @@ const submitHandler = (e) => {
                 onSubmit={submitHandler}
                 >
                     <div className="mb-3">
-                        <label htmlhtmlFor="exampleInputEmail1" className="form-label">Name</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
                         <input 
                         // value={input}
-                        value={inp}
-
+                        value={inp.name}
+name='name'
                         // onChange={(e)=>setInput(e.target.value)}
                         onChange={inpHandler}
                         // onChange={(e)=>setInp(e.target.value)}

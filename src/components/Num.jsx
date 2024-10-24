@@ -1,9 +1,16 @@
 /* eslint-disable no-undef */
+import { useState } from "react"
+
 const Num = ({number, vaishu, editNumber}) => {
+
+  const [inp, setInp] = useState("")
+const [change, setChange] = useState({inp});
+
   // const Num = ({addNumber}) => {
 
   const editHandler = (e) => {
     e.preventDefault()
+   editNumber(change)
 }
 
   return (
@@ -15,7 +22,7 @@ const Num = ({number, vaishu, editNumber}) => {
     className="btn btn-danger mx-4">Delete</div>
     
     <div 
-    onClick={()=> editNumber}
+    onClick={()=> (editHandler)}
     className="btn btn-success mx-4">Edit</div>
     </div>
     

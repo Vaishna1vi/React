@@ -72,9 +72,9 @@ const element = number.filter((e)=>e.id !== id)
 setNumber(element)
 }
 
-const editNumber = (e) => {
-    setInp([...inp, e.target.value])
-}
+// const [inp, setInp] = useState("")
+
+
     return (
         <>
 
@@ -82,7 +82,10 @@ const editNumber = (e) => {
             <br />
             </div>
             {/* <ItemForm addItem={addItem} /> */}
-            <ItemForm addNumber={addNumber} editNumber={editNumber} />
+            <ItemForm 
+            addNumber={addNumber} 
+            // editNumber={editHandler} 
+            />
 
             <br />
 
